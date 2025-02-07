@@ -3,11 +3,14 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import TableHeader from "./components/TableHeader";
 import StudentCard from "./components/StudentCard";
+import AddStudent from "./components/AddStudent";
 
 import studentsData from "./assets/students.json";
 
 function App() {
+
   const [students, setStudents] = useState(studentsData);
+    /*
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -26,11 +29,8 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const newInfo = { fullName, image, phone, email, program, graduationYear, graduated };
-    console.log("Add new student", newInfo);
-
-
-    const newStudent ={
+    
+       const newStudent ={
       fullName, 
       image, 
       phone, 
@@ -49,14 +49,19 @@ function App() {
     setGraduationYear(2023);
     setGraduated(false);
 
-
-  }
+*/
+  
 
   return (
     <div className="App pt-20">
       <Navbar />
+      
+      <AddStudent students={students} setStudents ={setStudents} />
+
+
 
       {/* FORM */}
+      {/*
       <form onSubmit={handleFormSubmit}>
         <span>Add a Student</span>
         <div>
@@ -115,8 +120,9 @@ function App() {
         </div>
 
       </form>
+        */}
       {/* FORM END */}
-
+    
 
       {/* TABLE/LIST HEADER */}
       <TableHeader />
